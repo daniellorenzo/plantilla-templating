@@ -1,0 +1,78 @@
+/**
+ * Retorna selectores de títulos..
+ * Uso:
+ *   @include headings {
+ *     color: black;
+ *   }
+ */
+@mixin headings($from: 1, $to: 6){
+	@for $i from $from through $to{
+		h#{$i}{
+			@content;
+		}
+	}
+}
+
+/**
+ * Retorna tamaño en ems.
+ */
+@function em($pixels, $context: $font-size) {
+	@return #{post-proc-num($pixels/$context)}em;
+}
+
+/**
+ * Retorna tamaño en rems.
+ */
+@function rem($pixels, $context: $font-size) {
+  @return #{post-proc-num($pixels/$context)}rem;
+}
+
+/**
+ * Redondear a 2 decimales.
+ */
+@function post-proc-num($val) {
+  @return round($val * 100) / 100;
+}
+
+/**
+ * Fija tamaño de un elemento (ancho y alto).
+ */
+@mixin size($size) {
+	width: $size;
+	height: $size;
+}
+
+/**
+ * Clearfix
+ */
+@mixin clearfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+/**
+ * Ajusta ancho en función del número de columnas de una fila.
+ */
+@mixin num-columnas($numero-columnas: $numero-max-columnas, $numero-total-columnas: $numero-max-columnas) {
+  width: ((100% / $numero-total-columnas) * $numero-columnas);
+}
+
+/**
+ * Importar fuentes
+ */
+@mixin font-face($familia, $nombre-familia, $svgfamilia, $peso) {
+  @font-face {
+    font-family:   $familia;
+    src:           url($font-path + $nombre-familia + '.eot');
+    src:           url($font-path + $nombre-familia + '.eot?#iefix') format('embedded-opentype'),
+                   url($font-path + $nombre-familia + '.woff2') format('woff2'),
+                   url($font-path + $nombre-familia + '.woff') format('woff'),
+                   url($font-path + $nombre-familia + '.ttf') format('truetype'),
+                   url($font-path + $nombre-familia + '.svg#' + $svgfamilia) format('svg');
+    font-weight:   $peso;
+    font-style :   normal;
+  }
+}

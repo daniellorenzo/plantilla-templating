@@ -1,0 +1,23 @@
+{
+  "name": "abanca-pim",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.html",
+  "author": "Plexus",
+  "license": "Propietary",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-extname": "^0.2.2",
+    "gulp-mustache": "^2.3.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-server-livereload": "^1.9.2",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-wait": "0.0.2",
+    "mustache": "^2.3.0"
+  },
+  "dependencies": {
+    "dotdotdot": "^1.7.0",
+    "jquery": "^3.2.1"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "title": "Page title",
+  "pages": {
+    "index": {
+      "header": "Hello world!",
+      "body": "Lorem ipsum",
+      "footer": "Copyleft 2017"
+    }
+  }
+}
